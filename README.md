@@ -8,23 +8,23 @@ To achieve the tailwind class merging behavior this package uses [tailwind-merge
 ```ts
 // ParentComponent.vue
 <div>
-	...
-	<ChildComponent  class="text-amber-500"  v-tw-merge />
-	...
+   ...
+   <ChildComponent  class="text-amber-500"  v-tw-merge />
+   ...
 </div>
 ```
 
 ```ts
 // ChildComponent.vue
 <div class="text-2xl text-red-500">
-	Lorem ipsum dolor sit amet consectetur adipisicing elit
+   Lorem ipsum dolor sit amet consectetur adipisicing elit
 </div>
 ```
 
 ChildComponent.vue will be rendered as:
 ```ts
 <div class="text-2xl text-amber-500">
-	Lorem ipsum dolor sit amet consectetur adipisicing elit
+   Lorem ipsum dolor sit amet consectetur adipisicing elit
 </div>
 ```
 The classes that were passed from *ParentComponent.vue* will override the classes that were specified in *ChildComponent.vue*
@@ -39,24 +39,7 @@ npm run dev
 npm run dev:build && npm run dev:preview
 ```
 
-## How to use in your Vue app:
-
-Register the plugin:
-```ts
-// main.ts (or main.js)
-
-import { createApp } from "vue";
-import App from "./App.vue";
-
-// import the tailwind-merge-vue-directive package
-import twMergeDirective from "tailwind-merge-vue-directive";
-
-const app = createApp(App);
-app.use(twMergeDirective);// register the plugin
-app.mount("#app");
-```
-
-Use the directive on your Vue components:
+## How to use in your components:
 ```ts
 <SomeComponent class="h-20 w-20 bg-red-500" v-tw-merge/>
 // or
