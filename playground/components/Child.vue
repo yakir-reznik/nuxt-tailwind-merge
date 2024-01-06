@@ -1,5 +1,5 @@
 <template>
-  <div class="text-red-500 text-xl">
+  <div class="text-red-500 text-xl" v-tw-merge>
     Lorem ipsum dolor sit amet consectetur adipisicing elit
     <p>{{ props.someProp }}</p>
     <p>{{ props.optionalProp }}</p>
